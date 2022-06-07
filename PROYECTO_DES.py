@@ -10,8 +10,8 @@ if Rta == 1:
   key=input("Ingrese la clave: ")
   print("Archivo en base64:", b64image)
 
-
-  #key = "DESCRYPT"
+ 
+  #key = "DESCRYPT" 
 
   k = pyDes.des(key.encode(), pyDes.CBC,b"\0\1\0\1\0\1\0\0",pad=None, padmode=pyDes.PAD_PKCS5)
   encriptada = k.encrypr(b64image)
