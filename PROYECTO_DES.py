@@ -14,7 +14,7 @@ if Rta == 1:
   #key = "DESCRYPT" 
 
   k = pyDes.des(key.encode(), pyDes.CBC,b"\0\1\0\1\0\1\0\0",pad=None, padmode=pyDes.PAD_PKCS5)
-  encriptada = k.encrypr(b64image)
+  encriptada = k.encrypt(b64image)
 
   print("Archivo cifrado: ", encriptada)
   encriptada64=base64.b64encode(encriptada)
@@ -26,7 +26,7 @@ if Rta == 1:
   print("Guardado como: ",""+archivo)
 else:
   archivo = input("Ingrese el nombre del archivo a descifrar: ")
-  key = imput("Ingrese la contraseña: ")
+  key = input("Ingrese la contraseña: ")
   with open(archivo,"rb") as img_file:
     b64image2 = base64.b64encode(img_file.read())
   print("Archivo leido en base64: ", b64image2)
